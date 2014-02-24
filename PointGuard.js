@@ -158,10 +158,12 @@
                   t = finish[1].split("Teacher: ")[1];
                   eM = finish[6];
                   eS = parseInt(finish[6].split("%")[0]);
+                  var skipCount = 6;
+                  for(var f = 0; f < x.length; f++)
+                    if(x[f].indexOf("% of Spread") > -1)
+                      skipCount = 7;
 
-
-
-                  for(var x = finish.indexOf("&nbsp;") - 1; x < finish.indexOf("Notes for Report"); x+= 6)
+                  for(var x = finish.indexOf("&nbsp;") - 1; x < finish.indexOf("Notes for Report"); x+= skipCount)
                   {
                     if(typeof finish[x+2] == "string" && !isNaN(parseInt(finish[x+3])) && !isNaN(parseInt(finish[x+4])) && !isNaN(parseInt(finish[x+5])))
                       grades.push({num : finish[x], assignment: finish[x + 2], points : finish[x+3], outOf : finish[x+4], percent : finish[x+5]});
