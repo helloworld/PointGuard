@@ -1,0 +1,53 @@
+<template name="login">
+  <!-- <form>
+    <div class="control-group">
+      <label>Username</label>
+      <div class="controls"><input id="username" type="text" value="" /></div>
+    </div>
+    <div class="control-group">
+      <label>Password</label>
+      <div class="controls"><input id="password" type="password" value="" /></div>
+    </div>
+    <div class="form-actions">
+      <a href="/forgot">Forgot password?</a>
+      <input type="submit" class="button" value="Log In" />
+    </div>
+  </form> -->
+
+  <div class="container">
+
+    <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Please sign in</h3>
+          </div>
+          
+          <div class="panel-body">
+            <div class="messages">
+            {{#each messages}}
+              <div class="alert alert-danger message message-{{type}}" >{{message}}</div>
+            {{/each}}
+          </div>
+            <form accept-charset="UTF-8" role="form">
+                    <fieldset>
+                <div class="form-group">
+                  <input class="form-control" placeholder="Username" name="username" id="username" type="text">
+              </div>
+              <div class="form-group">
+                <input class="form-control" placeholder="Password" name="password" type="password" id="password" value="">
+              </div>
+              <div class="checkbox">
+                  <label>
+                      <a href="/forgot">Forgot password?</a>
+                  </label>
+                </div>
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+            </fieldset>
+              </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
